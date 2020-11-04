@@ -1,0 +1,63 @@
+/* NavBar Styles */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    height: 30px;
+    transition: 0.5s linear;
+    padding: 10px;
+    z-index: 10;
+}
+
+.navbar__titles {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 37px;
+    line-height: 1;
+}
+
+.nav-item {
+    font-size: 24px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
+
+.navbar-active {
+    height: 100vh;
+    z-index: 10;
+}
+
+nav {
+    min-height: 60px;
+}
+
+#profile-link{
+    min-width: 155px;
+}
+
+#search-results{
+    margin-top: 60px;
+}
+
+.fa-times {
+    position: absolute;
+    font-size: 23px;
+    line-height: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#x-btn{
+    height: 32px;
+    width: 32px;
+    position: relative;
+    margin-right: 3px;
+}

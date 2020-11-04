@@ -1,0 +1,215 @@
+/* App Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+body{
+  min-width: 100vh;
+}
+
+.App {
+  text-align: center;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+hr {
+  background-color: black;
+  height: 3px;
+  margin-top: 6px;
+  border-radius: 10px;
+}
+
+
+
+@media screen and (min-width: 576px) {
+  .jumbotron {
+      padding: 4rem 2rem 0rem;
+  }
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+.top-banner {
+  padding: 10px;
+  margin-top: 75px;
+}
+
+/* .banner-btn {
+  position: absolute;
+  right: 0;
+} */
+
+
+.modal-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transform: translateZ(0);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.5em 1.5em 1.5em 1.5em;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (min-width: 500px) {
+  /* Center the Modal! */
+  .modal-area {
+    left: 50%;
+    top: 50%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    max-width: 30em;
+    max-height: calc(100% - 1em);
+  }
+}
+
+._modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  line-height: 1;
+  background: #f6f6f7;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+}
+
+._modal-close-icon {
+  width: 25px;
+  height: 25px;
+  fill: transparent;
+  stroke: black;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.modal-body {
+  padding-top: 0.25em;
+}
+._hide-visual {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.scroll-lock {
+  overflow: hidden;
+  margin-right: 17px;
+}
+svg, rect {
+  z-index: 0;
+}
+
+.list-group-item-action:hover {
+  cursor: pointer;
+}
+
+.remove-recipe-btn{
+  transition: linear .1s;
+}
+
+.remove-recipe-btn:hover {
+  transform: scale(1.2);
+}
+
+.btn-info {
+  max-height: 48px;
+}
+
+#copyright {
+  text-align: left;
+  padding: 10px 0 8px 0;
+}
+
+footer {
+  bottom: -70px;
+  min-width: 172px;
+}
+
+.card-img-left{
+  max-height: 200px;
+}
+
+.foodbook-card{
+  margin-top: 10px;
+  transition: linear .2s;
+}
+
+.foodbook-card:hover {
+  transform: scale(1.1);
+}
+
+.jumbotron {
+  margin: 0 auto;
+  padding: 65px 0 0 0;
+  background-color: rgb(23,162,184);
+}
+
+#foodbook-tag{
+  line-height: 1;;
+}
+
+.socials{
+  color:white;
+}
+
+.socials:hover{
+  text-decoration: none;
+  color: rgb(23,162,184);
+}
