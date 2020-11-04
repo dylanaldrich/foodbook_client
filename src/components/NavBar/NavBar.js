@@ -33,7 +33,6 @@ const NavBar = (props) => {
             if(!query) {
                 setResults([]);
             }
-            console.log("query", query);
             fetchRecipes(query);
         },
         [query]
