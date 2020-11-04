@@ -1,5 +1,5 @@
 /* Backend server URL */
-const URL = "http://localhost:3001/search";
+const URL = "https://foodbook-backend.herokuapp.com/search";
 
 class SearchModel {
     // search all

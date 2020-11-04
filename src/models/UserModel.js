@@ -1,5 +1,5 @@
 /* Backend server URL */
-const URL = "http://localhost:3001/user";
+const URL = "https://foodbook-backend.herokuapp.com/user";
 
 class UserModel {
     // show

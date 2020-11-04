@@ -1,5 +1,5 @@
 /* Backend server URL */
-const URL = "http://localhost:3001/auth";
+const URL = "https://foodbook-backend.herokuapp.com/auth";
 
 class AuthModel {
     // register
