@@ -32,8 +32,9 @@ const NavBar = (props) => {
         function () {
             if(!query) {
                 setResults([]);
+            } else {
+                fetchRecipes(query);
             }
-            fetchRecipes(query);
         },
         [query]
     );
