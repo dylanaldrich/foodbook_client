@@ -29,6 +29,7 @@ export const LoginForm = ({closeModal}) => {
             closeModal();
         } else {
             setError(response.message);
+            console.log(response.error);
         }
         });
     };
