@@ -26,6 +26,13 @@ const FoodbookDetail = (props) => {
         [props.match.params.id]
     );
 
+    // watches for change in foodbook
+    useEffect(function() {
+        if(foodbook) {
+            findFoodbook(foodbook._id);
+        }
+    }, [foodbook]);
+
     // watches for change in recipe filter to invoke recipe filter method
     useEffect(async () => {
         await setRecipes(foodbook.recipes);
