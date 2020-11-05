@@ -42,10 +42,7 @@ const NavBar = (props) => {
                             console.log("error in searchRecipes: ", error);
                             return <p>Sorry, that search didn't work. Please try again.</p>;
                         });
-                }, 500)
-                .catch((error) => {
-                    console.log("error in debounce: ", error);
-                }); 
+                }, 500); 
             }
         },
         [query]
