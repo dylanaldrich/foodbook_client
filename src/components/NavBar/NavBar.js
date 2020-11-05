@@ -77,6 +77,7 @@ const NavBar = (props) => {
                     {/* Search Bar */}
                     <form className='form-inline mt-2 mt-md-0 p2 justify-content-end'>
                         {active ? (
+                            // Search close button
                             <div className="position-absolute mr-2">
                                 <button onClick={(e) => {
                                     setActive(false);
@@ -127,7 +128,16 @@ const NavBar = (props) => {
 
             {/* Search Results */}
             <div className="d-flex container flex-wrap justify-content-around align-items-start overflow-auto" id="search-results">
-                {results ? results.map((result) => <ResultCard setActive={setActive} setResults={setResults} title={result.recipe.label} source={result.recipe.source} imageUrl={result.recipe.image} key={getRecipeId(result.recipe.uri)} edamam_id={getRecipeId(result.recipe.uri)} />) : null}
+                {results ? results.map((result) => <ResultCard 
+                    setActive={setActive} 
+                    setResults={setResults} 
+                    title={result.recipe.label} 
+                    source={result.recipe.source} 
+                    imageUrl={result.recipe.image} 
+                    key={getRecipeId(result.recipe.uri)} 
+                    edamam_id={getRecipeId(result.recipe.uri)}
+                    setQuery={setQuery}
+                />) : null}
             </div>
         </div>
     );

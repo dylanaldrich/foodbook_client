@@ -6,7 +6,7 @@ import './ResultCard.css';
 
 
 /* Result Card Component */
-const ResultCard = ({title, source, imageUrl, edamam_id, setActive, setResults}) => {
+const ResultCard = ({title, source, imageUrl, edamam_id, setActive, setResults, setQuery}) => {
     return(
         <div className="col-3">
             <div className="card mb-4 box-shadow">
@@ -19,6 +19,7 @@ const ResultCard = ({title, source, imageUrl, edamam_id, setActive, setResults})
                     onClick={() => {
                         setActive(false);
                         setResults([]);
+                        setQuery("");
                     }}>
                         <NavLink to={`/recipe/${edamam_id}`} className="btn btn-info">View</NavLink>
                     </div>
