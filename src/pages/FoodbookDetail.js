@@ -26,7 +26,6 @@ const FoodbookDetail = (props) => {
         [props.match.params.id]
     );
 
-
     // watches for change in recipe filter to invoke recipe filter method
     useEffect(async () => {
         await setRecipes(foodbook.recipes);
@@ -50,8 +49,10 @@ const FoodbookDetail = (props) => {
     // removes a recipe from current category
     function handleRecipeRemove(recipeId) {
         RecipeModel.remove(recipeId, foodbook._id)
+            .then(async (response) => {
+                await setFoodbook(response.revisedFoodbook);
+            })
             .catch((error) => setError(error.message));
-        findFoodbook(foodbook);
     };
 
     // filters recipes by type
