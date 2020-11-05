@@ -36,7 +36,7 @@ const FoodbookCard = ({foodbook, findProfile, profileId}) => {
                                     handleRecipeRemove(recipe._id);
                                     findProfile(profileId);
                                     }} 
-                                    className="remove-recipe-btn"
+                                    className="remove-recipe-btn ml-2"
                                     title="Remove this recipe">
                                         <i className="fas fa-times-circle"></i>
                                 </div>
