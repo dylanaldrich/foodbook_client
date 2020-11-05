@@ -137,7 +137,15 @@ const FoodbookDetail = (props) => {
                                         </Link>
                                         <p className="ml-3 mr-auto text-muted font-italic">{recipe.recipe_type}</p>
                                         {/* Remove button */}
-                                        <div onClick={() => handleRecipeRemove(recipe._id)} title="Remove this recipe"><i className="fas fa-times-circle"></i></div>
+                                        <div 
+                                            className="remove-recipe-btn" 
+                                            onClick={() => {
+                                            handleRecipeRemove(recipe._id);
+                                            findFoodbook(props.match.params.id);
+                                            }} 
+                                            title="Remove this recipe">
+                                                <i className="fas fa-times-circle"></i>
+                                        </div>
                                     </li>
                                     )
                                 : null}

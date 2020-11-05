@@ -46,7 +46,6 @@ const NavBar = (props) => {
                 setResults(response.searchResults.hits);
             })
             .catch((error) => {
-                console.log("error in searchRecipes: ", error);
                 return <p>Sorry, that search didn't work. Please try again.</p>;
             });
     }, 500),
@@ -58,8 +57,6 @@ const NavBar = (props) => {
         localStorage.clear();
         history.push("/");
     };
-    
-    
 
     function getRecipeId (string) {
         return string.split("recipe_")[1];
