@@ -25,6 +25,10 @@
     font-size: 24px;
 }
 
+.nav-link{
+    width: max-content;
+}
+
 .nav-link:hover {
     cursor: pointer;
 }
