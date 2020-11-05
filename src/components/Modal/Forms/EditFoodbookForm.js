@@ -9,7 +9,7 @@ import { userState } from "../../../recoil/atoms";
 
 
 /* Edit Foodbook Form Component */
-export const EditFoodbookForm = ({foodbookId ,closeModal}) => {
+export const EditFoodbookForm = ({foodbookId, closeModal, findFoodbook}) => {
     const [name, setName] = useState("");
     const [foodbook, setFoodbook] = useState({});
     const [error, setError] = useState('');
@@ -42,8 +42,8 @@ export const EditFoodbookForm = ({foodbookId ,closeModal}) => {
         foodbook.name = name;
         FoodbookModel.update(foodbookId, foodbook).then((response) => {
             if(response.status === 200) {
+                findFoodbook(foodbookId);
                 closeModal();
-                setFoodbook(response.updatedFoodbook);
             } else {
                 setError(response.message);
             }

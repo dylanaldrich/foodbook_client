@@ -78,7 +78,7 @@ const FoodbookDetail = (props) => {
                         <h1 className="display-4 text-left">{foodbook.name}</h1>
                     </div>
                     <div className="ml-auto">
-                        <ModalContainer triggerText={"Edit foodbook"} foodbookId={foodbook._id} />
+                        <ModalContainer triggerText={"Edit foodbook"} findFoodbook={findFoodbook} foodbookId={foodbook._id} />
                     </div>
                 </div>
                 

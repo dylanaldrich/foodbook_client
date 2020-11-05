@@ -32,6 +32,7 @@ export const Modal = ({
     findOneRecipe,
     currentRecipeId,
     savedRecipeId,
+    findFoodbook,
     }) => {
 
     // determine which form to render inside modal
@@ -72,7 +73,8 @@ export const Modal = ({
         } else if (triggerText === "Edit foodbook") {
             return (<EditFoodbookForm 
                 closeModal={closeModal} 
-                foodbookId={foodbookId} 
+                foodbookId={foodbookId}
+                findFoodbook={findFoodbook}
             />);
         } 
     };
