@@ -29,8 +29,6 @@ export const Modal = ({
     savedFoodbooks,
     findProfile,
     profileId,
-    // findOneRecipe,
-    // currentRecipeId,
     savedRecipeId,
     findFoodbook,
     determineIfSaved,
@@ -47,8 +45,6 @@ export const Modal = ({
                 closeModal={closeModal} 
                 recipeName={recipeName}
                 edamam_id={edamam_id}
-                // findOneRecipe={findOneRecipe}
-                // currentRecipeId={currentRecipeId}
                 determineIfSaved={determineIfSaved}
             />);
         } else if (triggerText === "Edit Recipe") {

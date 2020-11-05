@@ -110,9 +110,7 @@ const RecipeDetail = (props) => {
                                 : <ModalContainer 
                                 triggerText={"Save Recipe"} 
                                 recipeName={recipe.label} 
-                                edamam_id={props.match.params.id} 
-                                // findOneRecipe={findOneRecipe} 
-                                // currentRecipeId={props.match.params.id}
+                                edamam_id={props.match.params.id}
                                 determineIfSaved={determineIfSaved}
                                 /> 
                             }
