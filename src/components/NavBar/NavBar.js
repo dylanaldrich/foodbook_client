@@ -56,6 +56,7 @@ const NavBar = (props) => {
         setUser(null);
         localStorage.clear();
         history.push("/");
+        history.go();
     };
 
     function getRecipeId (string) {
