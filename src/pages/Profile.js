@@ -76,7 +76,7 @@ const Profile = (props) => {
 
                     {/* Foodbooks header */}
                     <div className="page-header container d-flex align-items-center">
-                        <h2 className="text-left pt-2 font-weight-bold">My foodbooks <ModalContainer triggerText={"Create a foodbook"} findProfile={findProfile} profileId={props.match.params.id} /></h2>
+                        <h2 className="text-left pt-3 font-weight-bold">My foodbooks <ModalContainer triggerText={"Create a foodbook"} findProfile={findProfile} profileId={props.match.params.id} /></h2>
                     </div>
 
                     {/* Foodbooks grid */}

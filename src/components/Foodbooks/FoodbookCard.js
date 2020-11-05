@@ -28,7 +28,7 @@ const FoodbookCard = ({foodbook, findProfile, profileId}) => {
                     <ul className="list-group list-group-flush">
                         {foodbook.recipes.length ? foodbook.recipes.map((recipe) => 
                             <li className="list-group-item d-flex align-items-center px-1 text-center" key={recipe._id}>
-                                <Link to={`/recipe/${recipe.edamam_id}`}>
+                                <Link className="mr-auto" to={`/recipe/${recipe.edamam_id}`}>
                                     {recipe.name ? recipe.name : "Mysterious Nameless Recipe"}
                                 </Link>
                                 <div 
@@ -36,7 +36,7 @@ const FoodbookCard = ({foodbook, findProfile, profileId}) => {
                                     handleRecipeRemove(recipe._id);
                                     findProfile(profileId);
                                     }} 
-                                    className="remove-recipe-btn ml-3"
+                                    className="remove-recipe-btn"
                                     title="Remove this recipe">
                                         <i className="fas fa-times-circle"></i>
                                 </div>
