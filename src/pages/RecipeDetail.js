@@ -58,7 +58,6 @@ const RecipeDetail = (props) => {
     function findOneRecipe (recipe_id) {
         SearchModel.searchOneRecipe(recipe_id)
         .then((response) => {
-            console.log("response", response);
             const foundRecipe = response.searchResults.hits[0].recipe;
             setRecipe(foundRecipe);
         })
