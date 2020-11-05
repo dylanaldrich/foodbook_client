@@ -104,22 +104,22 @@ const NavBar = (props) => {
                         </li>
 
                         {/* Determine which links to show if logged in/out */}
-                        {user ? (
-                            <>
-                                <li className='nav-item'>
-                                    <NavLink className='nav-link' id="profile-link" to={`/profile/${user._id}`}>My Profile</NavLink>
-                                </li>
-                                <li className='nav-item nav-link' id="logout-link" onClick={logout}>
-                                    Log Out
-                                </li>
-                            </>
-                        ) : (
+                        {user === null ? (
                             <>
                                 <li className='nav-item'>
                                     <ModalContainer triggerText={"Log In"} />
                                 </li>
                                 <li className='nav-item'>
                                     <ModalContainer triggerText={"Sign Up"} />
+                                </li>
+                            </>
+                        ) : ( 
+                            <>
+                                <li className='nav-item'>
+                                    <NavLink className='nav-link' id="profile-link" to={`/profile/${user._id}`}>My Profile</NavLink>
+                                </li>
+                                <li className='nav-item nav-link' id="logout-link" onClick={logout}>
+                                    Log Out
                                 </li>
                             </>
                         )}
