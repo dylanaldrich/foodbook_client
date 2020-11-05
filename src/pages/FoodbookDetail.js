@@ -50,7 +50,8 @@ const FoodbookDetail = (props) => {
     // removes a recipe from current category
     function handleRecipeRemove(recipeId) {
         RecipeModel.remove(recipeId, foodbook._id)
-            .catch((error) => console.log("Recipe remove error: ", error));
+            .catch((error) => setError(error.message));
+        findFoodbook(foodbook);
     };
 
     // filters recipes by type
@@ -139,10 +140,7 @@ const FoodbookDetail = (props) => {
                                         {/* Remove button */}
                                         <div 
                                             className="remove-recipe-btn" 
-                                            onClick={() => {
-                                            handleRecipeRemove(recipe._id);
-                                            findFoodbook(props.match.params.id);
-                                            }} 
+                                            onClick={() => handleRecipeRemove(recipe._id)} 
                                             title="Remove this recipe">
                                                 <i className="fas fa-times-circle"></i>
                                         </div>
