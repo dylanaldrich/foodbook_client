@@ -26,12 +26,12 @@ const FoodbookDetail = (props) => {
         [props.match.params.id]
     );
 
-    // watches for change in foodbook
-    useEffect(function() {
-        if(foodbook) {
-            findFoodbook(foodbook._id);
-        }
-    }, [foodbook]);
+    // // watches for change in foodbook
+    // useEffect(function() {
+    //     if(foodbook) {
+    //         findFoodbook(foodbook._id);
+    //     }
+    // }, [foodbook]);
 
     // watches for change in recipe filter to invoke recipe filter method
     useEffect(async () => {
@@ -56,9 +56,9 @@ const FoodbookDetail = (props) => {
     // removes a recipe from current category
     function handleRecipeRemove(recipeId) {
         RecipeModel.remove(recipeId, foodbook._id)
-            .then(async (response) => {
-                await setFoodbook(response.revisedFoodbook);
-            })
+            // .then(async (response) => {
+            //     await setFoodbook(response.revisedFoodbook);
+            // })
             .catch((error) => setError(error.message));
     };
 
