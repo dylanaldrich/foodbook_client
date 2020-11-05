@@ -33,11 +33,48 @@ const NavBar = (props) => {
             if(!query) {
                 setResults([]);
             } else {
-                fetchRecipes(query);
+                debounce(function fetchRecipes () {
+                    SearchModel.searchRecipes(query)
+                        .then((response) => {
+                            setResults(response.searchResults.hits);
+                        })
+                        .catch((error) => {
+                            console.log("error in searchRecipes: ", error);
+                            return <p>Sorry, that search didn't work. Please try again.</p>;
+                        });
+                }, 500)
+                .catch((error) => {
+                    console.log("error in debounce: ", error);
+                }); 
             }
         },
         [query]
     );
+
+    // Source: https://www.educative.io/edpresso/how-to-use-the-debounce-function-in-javascript
+    // debounce function to limit search query calls
+    const debounce = (func, wait, immediate)=> {
+        var timeout;
+    
+        return function executedFunction() {
+            var context = this;
+            var args = arguments;
+                
+            var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+            };
+    
+            var callNow = immediate && !timeout;
+            
+            clearTimeout(timeout);
+    
+            timeout = setTimeout(later, wait);
+            
+            if (callNow) func.apply(context, args);
+            };
+        };
+        
 
     function logout () {
         setUser(null);
@@ -45,15 +82,7 @@ const NavBar = (props) => {
         history.push("/");
     };
     
-    function fetchRecipes (query) {
-        SearchModel.searchRecipes(query)
-            .then((response) => {
-                setResults(response.searchResults.hits);
-            })
-            .catch((error) => {
-                return <p>Sorry, that search didn't work. Please try again.</p>;
-            });
-    };
+    
 
     function getRecipeId (string) {
         return string.split("recipe_")[1];
