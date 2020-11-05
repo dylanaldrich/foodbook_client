@@ -33,14 +33,14 @@ const NavBar = (props) => {
         function () {
             if(!query) {
                 setResults([]);
-            } /* else {
-                // fetchRecipes(query);
-            } */
+            } else {
+                debouncedSearch(query);
+            }
         },
         [query]
     );
 
-    const debouncedSearch = useCallback(debounce(function fetchRecipes () {
+    const debouncedSearch = useCallback(debounce(function fetchRecipes (query) {
         SearchModel.searchRecipes(query)
             .then((response) => {
                 setResults(response.searchResults.hits);
@@ -94,10 +94,7 @@ const NavBar = (props) => {
                             placeholder='Search' 
                             aria-label='Search'
                             onFocus={(e) => setActive(true)}
-                            onChange={(e) => {
-                                setQuery(e.target.value);
-                                debouncedSearch();
-                            }}
+                            onChange={(e) => setQuery(e.target.value)}
                         />
                     </form>
 
