@@ -93,6 +93,7 @@ const NavBar = (props) => {
                             aria-label='Search'
                             onFocus={(e) => setActive(true)}
                             onChange={(e) => setQuery(e.target.value)}
+                            onBlur={(e) => e.target.value=''}
                         />
                     </form>
 
