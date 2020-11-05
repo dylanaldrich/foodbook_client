@@ -1,7 +1,8 @@
 /* imports */
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
 import { useRecoilState } from "recoil";
+import debounce from 'lodash.debounce';
 
 import ModalContainer from '../Modal/ModalContainer';
 import SearchModel from '../../models/SearchModel';
@@ -32,45 +33,24 @@ const NavBar = (props) => {
         function () {
             if(!query) {
                 setResults([]);
-            } else {
-                debounce(function fetchRecipes () {
-                    SearchModel.searchRecipes(query)
-                        .then((response) => {
-                            setResults(response.searchResults.hits);
-                        })
-                        .catch((error) => {
-                            console.log("error in searchRecipes: ", error);
-                            return <p>Sorry, that search didn't work. Please try again.</p>;
-                        });
-                }, 500); 
-            }
+            } /* else {
+                // fetchRecipes(query);
+            } */
         },
         [query]
     );
 
-    // Source: https://www.educative.io/edpresso/how-to-use-the-debounce-function-in-javascript
-    // debounce function to limit search query calls
-    const debounce = (func, wait, immediate)=> {
-        var timeout;
-    
-        return function executedFunction() {
-            var context = this;
-            var args = arguments;
-                
-            var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-            };
-    
-            var callNow = immediate && !timeout;
-            
-            clearTimeout(timeout);
-    
-            timeout = setTimeout(later, wait);
-            
-            if (callNow) func.apply(context, args);
-            };
-        };
+    const debouncedSearch = useCallback(debounce(function fetchRecipes () {
+        SearchModel.searchRecipes(query)
+            .then((response) => {
+                setResults(response.searchResults.hits);
+            })
+            .catch((error) => {
+                console.log("error in searchRecipes: ", error);
+                return <p>Sorry, that search didn't work. Please try again.</p>;
+            });
+    }, 500),
+    []);
         
 
     function logout () {
@@ -114,7 +94,10 @@ const NavBar = (props) => {
                             placeholder='Search' 
                             aria-label='Search'
                             onFocus={(e) => setActive(true)}
-                            onChange={(e) => setQuery(e.target.value)}
+                            onChange={(e) => {
+                                setQuery(e.target.value);
+                                debouncedSearch();
+                            }}
                         />
                     </form>
 

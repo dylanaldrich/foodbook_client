@@ -2,6 +2,7 @@
 import React from 'react';
 import ScrollUpButton from 'react-scroll-up-button';
 
+import '../../App.css';
 
 /* Footer Component */
 const Footer = (props) => {
