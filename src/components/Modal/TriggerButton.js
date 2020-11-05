@@ -7,7 +7,7 @@ import './TriggerButton.css';
 /* Trigger Button Component */
 const TriggerButton = ({ triggerText, buttonRef, showModal}) => {    
     // renders different type of trigger button for modals that live in the navbar
-    if(triggerText === "Login" || triggerText === "Sign Up") {
+    if(triggerText === "Log In" || triggerText === "Sign Up") {
         return (
             <div 
             className={`nav-link ${triggerText === "Sign Up" ? "signup-link" : ""}`} 

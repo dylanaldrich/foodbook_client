@@ -38,7 +38,7 @@ export const Modal = ({
     function setForm (triggerText) {
         if (triggerText === 'Sign Up') {
             return (<RegisterForm closeModal={closeModal} />);
-        } else if (triggerText === 'Login') {
+        } else if (triggerText === 'Log In') {
             return (<LoginForm closeModal={closeModal} />);
         } else if (triggerText === "Save Recipe") {
             return (<AddRecipeForm 

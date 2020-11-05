@@ -110,13 +110,13 @@ const NavBar = (props) => {
                                     <NavLink className='nav-link' id="profile-link" to={`/profile/${user._id}`}>My Profile</NavLink>
                                 </li>
                                 <li className='nav-item nav-link' onClick={logout}>
-                                    Logout
+                                    Log Out
                                 </li>
                             </>
                         ) : (
                             <>
                                 <li className='nav-item'>
-                                    <ModalContainer triggerText={"Login"} />
+                                    <ModalContainer triggerText={"Log In"} />
                                 </li>
                                 <li className='nav-item'>
                                     <ModalContainer triggerText={"Sign Up"} />
