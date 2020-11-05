@@ -8,7 +8,7 @@ import { userState } from "../../../recoil/atoms";
 
 
 /* Add Recipe Form Component */
-export const AddRecipeForm = ({closeModal, recipeName, edamam_id, findOneRecipe, currentRecipeId}) => {    
+export const AddRecipeForm = ({closeModal, recipeName, edamam_id, determineIfSaved}) => {    
     const [recipe_type, setRecipeType] = useState("entree");
     const [allFoodbooks, setAllFoodbooks] = useState([]);
     const [user, setUser] = useRecoilState(userState);
@@ -29,7 +29,7 @@ export const AddRecipeForm = ({closeModal, recipeName, edamam_id, findOneRecipe,
         event.preventDefault();
         RecipeModel.create({recipe_type, foodbooksIds: selectedFoodbooks, name: recipeName, edamam_id}).then((response) => {
         if(response.status === 201) {
-            findOneRecipe(currentRecipeId);
+            determineIfSaved();
             closeModal();
         } else {
             setError(response.message);

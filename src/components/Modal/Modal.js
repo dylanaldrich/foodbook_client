@@ -29,10 +29,11 @@ export const Modal = ({
     savedFoodbooks,
     findProfile,
     profileId,
-    findOneRecipe,
-    currentRecipeId,
+    // findOneRecipe,
+    // currentRecipeId,
     savedRecipeId,
     findFoodbook,
+    determineIfSaved,
     }) => {
 
     // determine which form to render inside modal
@@ -46,8 +47,9 @@ export const Modal = ({
                 closeModal={closeModal} 
                 recipeName={recipeName}
                 edamam_id={edamam_id}
-                findOneRecipe={findOneRecipe}
-                currentRecipeId={currentRecipeId}
+                // findOneRecipe={findOneRecipe}
+                // currentRecipeId={currentRecipeId}
+                determineIfSaved={determineIfSaved}
             />);
         } else if (triggerText === "Edit Recipe") {
             return (<EditRecipeForm 

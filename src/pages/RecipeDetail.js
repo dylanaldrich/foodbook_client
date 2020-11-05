@@ -111,8 +111,9 @@ const RecipeDetail = (props) => {
                                 triggerText={"Save Recipe"} 
                                 recipeName={recipe.label} 
                                 edamam_id={props.match.params.id} 
-                                findOneRecipe={findOneRecipe} 
-                                currentRecipeId={props.match.params.id}
+                                // findOneRecipe={findOneRecipe} 
+                                // currentRecipeId={props.match.params.id}
+                                determineIfSaved={determineIfSaved}
                                 /> 
                             }
                         </div>
