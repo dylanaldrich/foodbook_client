@@ -43,6 +43,7 @@ export const EditFoodbookForm = ({foodbookId ,closeModal}) => {
         FoodbookModel.update(foodbookId, foodbook).then((response) => {
             if(response.status === 200) {
                 closeModal();
+                setFoodbook(response.updatedFoodbook);
             } else {
                 setError(response.message);
             }
