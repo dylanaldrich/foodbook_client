@@ -109,7 +109,7 @@ const NavBar = (props) => {
                                 <li className='nav-item'>
                                     <NavLink className='nav-link' id="profile-link" to={`/profile/${user._id}`}>My Profile</NavLink>
                                 </li>
-                                <li className='nav-item nav-link' onClick={logout}>
+                                <li className='nav-item nav-link' id="logout-link" onClick={logout}>
                                     Log Out
                                 </li>
                             </>

@@ -42,6 +42,10 @@ nav {
     min-width: 155px;
 }
 
+#logout-link{
+    min-width: 118px;
+}
+
 #search-results{
     margin-top: 60px;
 }
