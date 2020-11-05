@@ -56,9 +56,9 @@ const FoodbookDetail = (props) => {
     // removes a recipe from current category
     function handleRecipeRemove(recipeId) {
         RecipeModel.remove(recipeId, foodbook._id)
-            // .then(async (response) => {
-            //     await setFoodbook(response.revisedFoodbook);
-            // })
+            .then(async (response) => {
+                await setRecipes(response.revisedFoodbook.recipes);
+            })
             .catch((error) => setError(error.message));
     };
 
