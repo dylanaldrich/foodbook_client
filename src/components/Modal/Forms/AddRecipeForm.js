@@ -55,36 +55,42 @@ export const AddRecipeForm = ({closeModal, recipeName, edamam_id, determineIfSav
     }) : null;
 
     return (
-        <form onSubmit={handleSubmit}>
-            {error && <p style={{ color: "red" }}>{error}</p>} 
-            <div className="form-group text-center">
-            <label htmlFor="recipe_type">Recipe type</label>
-                    <select className="ml-2" name="recipe_type" onChange={(e) => setRecipeType(e.target.value)}>
-                        <option value="" className="text-italic text-muted">Select...</option>
-                        <option value="entree">Entrée</option>
-                        <option value="appetizer">Appetizer/Snack</option>
-                        <option value="side">Side Dish</option>
-                        <option value="salad">Salad</option>
-                        <option value="dessert">Dessert</option>
-                        <option value="drink">Drink</option>
-                    </select>
-            </div>
+        <>
+            {user ?
+                <form onSubmit={handleSubmit}>
+                    {error && <p style={{ color: "red" }}>{error}</p>} 
+                    <div className="form-group text-center">
+                    <label htmlFor="recipe_type">Recipe type</label>
+                            <select className="ml-2" name="recipe_type" onChange={(e) => setRecipeType(e.target.value)}>
+                                <option value="" className="text-italic text-muted">Select...</option>
+                                <option value="entree">Entrée</option>
+                                <option value="appetizer">Appetizer/Snack</option>
+                                <option value="side">Side Dish</option>
+                                <option value="salad">Salad</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="drink">Drink</option>
+                            </select>
+                    </div>
 
-            {/* foodbook checkboxes */}
-            <div className="form-group text-center">
-                <h5>Foodbooks:</h5> 
-                <ul className="d-flex flex-wrap list-unstyled">
-                    { generateCheckbox}
-                </ul>
-            </div>
+                    {/* foodbook checkboxes */}
+                    <div className="form-group text-center">
+                        <h5>Foodbooks:</h5> 
+                        <ul className="d-flex flex-wrap list-unstyled">
+                            { generateCheckbox}
+                        </ul>
+                    </div>
 
-            {/* submit button */}
-            <div className="form-group">
-                <button className="form-control btn btn-primary" type="submit">
-                    Save Recipe
-                </button>
-            </div>
-        </form>
+                    {/* submit button */}
+                    <div className="form-group">
+                        <button className="form-control btn btn-primary" type="submit">
+                            Save Recipe
+                        </button>
+                    </div>
+                </form> 
+            :
+                <p>Please log in or sign up to save recipes.</p>
+            }
+        </>
     );
 };
 
