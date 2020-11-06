@@ -10,12 +10,14 @@ export const RegisterForm = ({closeModal}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
     AuthModel.register({username, email, password}).then((response) => {
       if(response.status === 201) {
-        closeModal();
+        setSuccessMessage(response.message);
+        setTimeout(() => { closeModal(); }, 2000);
       } else {
         setError(response.message);
       }
@@ -25,6 +27,7 @@ export const RegisterForm = ({closeModal}) => {
   return (
     <form onSubmit={handleSubmit}>
       {error && <p style={{ color: "red" }}>{error}</p>} 
+      {successMessage && <p style={{ color: "blue" }}>{successMessage}</p>}
       <div className="form-group">
         <label htmlFor="username">Username</label>
         <input 
