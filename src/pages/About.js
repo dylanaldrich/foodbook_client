@@ -24,14 +24,16 @@ const About = (props) => {
                 </div>
                 <div className='p-3 w-50 mx-3 lead bg-secondary d-flex align-items-center justify-content-center text-white rounded col'>
                     <div className="align-self-center">
-                        <img src="https://i.ibb.co/7YPhThm/CV-photo.png" alt="dylan aldrich" className="rounded-circle" />
+                        <img src="https://i.ibb.co/7YPhThm/CV-photo.png" alt="dylan aldrich creator photo" className="rounded-circle" />
                         <h2 className="font-weight-bold text-info display-4">Creator</h2>
                         <h3>Dylan Aldrich</h3>
                         <small>– Los Angeles, CA –</small>
                         <p className="d-flex justify-content-center mt-2">
-                            <a className="nav-item mx-2 socials" href="https://www.linkedin.com/in/dylanaldrich/">LinkedIn</a> | <a className="nav-item mx-2 socials" href="https://github.com/dylanaldrich">Github</a>
+                            <a className="nav-item mx-2 socials" href="https://www.linkedin.com/in/dylanaldrich/" target="_blank">LinkedIn</a> | <a className="nav-item mx-2 socials" href="https://github.com/dylanaldrich" target="_blank">Github</a>
                         </p>
-                        <small className="align-items-center"><i class="far fa-envelope"></i> aldrich.dylan@gmail.com</small>
+                        <small className="align-items-center" id="email-address">
+                            <i class="far fa-envelope"></i> <a href="mailto:aldrich.dylan@gmail.com" className="socials">aldrich.dylan@gmail.com</a>
+                        </small>
                     </div>
                 </div>
             </div>

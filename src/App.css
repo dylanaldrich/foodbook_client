@@ -218,3 +218,7 @@ footer {
   text-decoration: none;
   color: rgb(23,162,184);
 }
+
+#email-address{
+  margin-top: -10px;
+}
