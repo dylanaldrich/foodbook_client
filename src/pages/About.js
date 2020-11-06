@@ -31,7 +31,7 @@ const About = (props) => {
                         <p className="d-flex justify-content-center mt-2">
                             <a className="nav-item mx-2 socials" href="https://www.linkedin.com/in/dylanaldrich/">LinkedIn</a> | <a className="nav-item mx-2 socials" href="https://github.com/dylanaldrich">Github</a>
                         </p>
-                        <p><i class="far fa-envelope"></i> aldrich.dylan@gmail.com</p>
+                        <small className="align-items-center"><i class="far fa-envelope"></i> aldrich.dylan@gmail.com</small>
                     </div>
                 </div>
             </div>
