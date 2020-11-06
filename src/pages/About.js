@@ -28,7 +28,7 @@ const About = (props) => {
                         <h2 className="font-weight-bold text-info display-4">Creator</h2>
                         <h3>Dylan Aldrich</h3>
                         <small>– Los Angeles, CA –</small>
-                        <p className="d-flex justify-content-center mt-2">
+                        <p className="d-flex justify-content-center my-2">
                             <a className="nav-item mx-2 socials" href="https://www.linkedin.com/in/dylanaldrich/" target="_blank">LinkedIn</a> | <a className="nav-item mx-2 socials" href="https://github.com/dylanaldrich" target="_blank">Github</a>
                         </p>
                         <small className="align-items-center" id="email-address">
