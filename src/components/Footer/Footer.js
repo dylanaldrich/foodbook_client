@@ -12,7 +12,7 @@ const Footer = (props) => {
                 <p className="float-right">
                 <ScrollUpButton />
                 </p>
-                <p id='copyright'>&copy; {(new Date().getFullYear())} foodbook</p>
+                {/* <p id='copyright'>&copy; {(new Date().getFullYear())} foodbook</p> */}
             </div>
         </footer>
     );

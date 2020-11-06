@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
