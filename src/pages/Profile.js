@@ -18,11 +18,10 @@ const Profile = (props) => {
 
     // watches to see if url changes
     useEffect(function(){
-            if(props.match.params.id) {
-                const userId = props.match.params.id;
-                findProfile(userId);
-            }
-        },
+        if(props.match.params.id) {
+            const userId = props.match.params.id;
+            findProfile(userId);
+        }},
         [props.match.params.id]
     );
 
@@ -31,9 +30,8 @@ const Profile = (props) => {
         if(foodbooks) {
             const userId = props.match.params.id;
             findProfile(userId);
-        }
-    }, 
-    []
+        }}, 
+        []
     );
 
     // finds the current user
