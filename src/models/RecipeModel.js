@@ -1,10 +1,11 @@
 /* Backend server URL */
 const URL = "https://foodbook-backend.herokuapp.com/recipe";
+const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
 
 class RecipeModel {
     // show
     static show = (recipeId) => {
-        return fetch(`${URL}/${recipeId}`, {
+        return fetch(corsProxyUrl + `${URL}/${recipeId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -16,7 +17,7 @@ class RecipeModel {
 
     // create
     static create = (recipeData) => {
-        return fetch(URL, {
+        return fetch(corsProxyUrl + URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +31,7 @@ class RecipeModel {
 
     // update
     static update = (recipeId, recipeData) => {
-        return fetch(`${URL}/${recipeId}`, {
+        return fetch(corsProxyUrl + `${URL}/${recipeId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +45,7 @@ class RecipeModel {
 
     // delete
     static delete = (recipeId) => {
-        return fetch(`${URL}/${recipeId}`, {
+        return fetch(corsProxyUrl + `${URL}/${recipeId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -57,7 +58,7 @@ class RecipeModel {
 
     // remove (from one foodbook)
     static remove = (recipeId, foodbookId) => {
-        return fetch(`${URL}/${recipeId}/${foodbookId}`, {
+        return fetch(corsProxyUrl + `${URL}/${recipeId}/${foodbookId}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
