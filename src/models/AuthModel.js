@@ -1,11 +1,10 @@
 /* Backend server URL */
 const URL = "https://foodbook-backend.herokuapp.com/auth";
-const corsProxyUrl = "https://cors-anywhere.herokuapp.com/";
 
 class AuthModel {
     // register
     static register = (userData) => {
-        return fetch(corsProxyUrl + `${URL}/register`, {
+        return fetch(`${URL}/register`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -17,7 +16,7 @@ class AuthModel {
 
     // login
     static login = (userData) => {
-        return fetch(corsProxyUrl + `${URL}/login`, {
+        return fetch(`${URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
