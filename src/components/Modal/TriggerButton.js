@@ -21,7 +21,7 @@ const TriggerButton = ({ triggerText, buttonRef, showModal}) => {
     
     return (
         <button
-            className="btn btn-md btn-info center modal-button w-auto"  
+            className="btn btn-md btn-info center modal-button"  
             ref={buttonRef}
             onClick={showModal}
         >
