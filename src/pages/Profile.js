@@ -32,7 +32,9 @@ const Profile = (props) => {
             const userId = props.match.params.id;
             findProfile(userId);
         }
-    }, [foodbooks])
+    }, 
+    []
+    );
 
     // finds the current user
     function findProfile (userId) {
